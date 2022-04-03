@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Element Selector */
+        body{
+            margin: 0px;
+            padding: 30px;
+            font-family: Montserrat;
+        }
+        /* Element Selector */
+        li{
+            color: blue;
+            margin: 10px;
+        }
+        /* Class Selector */
+        .text-center{
+            text-align: center;
+        }
+        /* Class Selector */
+        .color-green{
+            color: green;
+        }
+        /* Class Selector */
+        .center{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        /* ID Selector */
+        #underlined{
+            text-decoration: underline;
+        }
+        /* Descendent Selector */
+        div p{
+            background-color: yellow;
+        }
+        /* Adjacent Sibling */
+        li+h3{
+            background-color: cyan;
+        }
+        /* Direct Child */
+        div > h3{
+            color: purple;
+        }
+        /* Multiple Class Selector */
+        .bg-black.color-white{
+            color: white;
+            background-color: black;
+        }
+        /* Hover Selector */
+        a:hover{
+            color: red;
+            font-weight: bold;
+            text-decoration: underline;
+            background-color: antiquewhite;
+        }
+        /* Visited Selector */
+        a:visited{
+            color: green;
+            font-weight: bold;
+        }
+        /* Active Selector */
+        a:active{
+            color: cyan;
+            font-weight: bold;
+        }
+        /* ::first-line Selector */
+        .firstLineDemo::first-line{
+            color: red;
+        }
+        /* ::after and ::before  */
+        .link::before{
+            content: "Visit -";
+        }
+        /* nth :nth-child() */
+        p:nth-child(3) {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
+        /* :first-of-type  */
+        .firstTypeDemo:first-of-type {
+            color: white;
+            background-color: green;
+        }
+        /* attribute selector */
+        a[target] {
+            background-color: yellow;
+            color: red;
+        }
+        /* Multiple Selectors */
+        #one, .multiple{
+            color: wheat;
+            background-color: #DC2E27;
+        }
+    </style>
+    <title>CSS Selectors</title>
+</head>
+<body>
+    <h1 style="color: #DC2E27;" class="text-center">CSS Selectors</h1>
+    <h2>Primary Selectors</h2>
+    <ul>
+        <li class="color-green"><b>Element Selector:</b> All <tt>h1</tt> tags are in RED colour.</li>
+        <li class="color-green"><b>Class Selector:</b> All elements having class <tt>color-green</tt> is green coloured.</li>
+        <li class="color-green" id="underlined"><b>ID Selector:</b> This element is having class <tt>underlined</tt>.</li>
+    </ul>
+    <br>
+    <h2>Nested Selectors</h2>
+    <ul>
+        <li><b>Descendent Selector:</b></li>
+        <div>
+            <p>This paragraph is Descendent to a division. <tt>(div p)</tt></p>
+        </div>
+        <li><b>Adjacent Sibling:</b> Every h2 tag after li is adjacent sibling to h2 tag and have cyan as background-color.</li>
+        <h3>Adjacent Sibling to list element.</h3>
+        <li><b>Direct Child:</b> All h3 inside div is direct child of div.</li>
+        <div>
+            <h3>Child of div tag and is in purple colour.</h3>
+            <section>
+                <h3>Not a direct child of div.</h3>
+            </section>
+        </div>
+        <li class="bg-black color-white"><b>Multiple Class:</b> This element is having multiple classes color-white and bg-black.</li>
+    </ul>
+    <br>
+    <h2>Pseudo Selectors</h2>
+    <ul>
+        <li><a href="https://www.geu.ac.in/"><b>:hover - </b> On hovering any link it becomes bold and underline.</a></li>
+        <li><a href="https://www.geu.ac.in/"><b>:visited</b> - Visited Links are coloured green.</a></li>
+        <li><a href="https://www.geu.ac.in/"><b>:active</b> - Active Links are coloured cyan.</a></li>
+        <li><b>::firstline</b> - Firstline of any paragraph having class firstLineDemo is of red color.</li>
+        <p class="firstLineDemo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum veniam magni minus, temporibus labore error inventore, fugiat neque obcaecati nemo eius nulla. Veniam voluptas quod ipsum corrupti? Odio inventore quis numquam quae neque earum. In illum consectetur libero voluptate, vero quibusdam ratione voluptatem voluptatum accusantium modi doloremque, ut qui cum.</p>
+        <li><b>::before & ::after - </b>It creats a psuedo element "Visit" before/after all links having class link.</li>
+        <a href="https://www.geu.ac.in/" class="link">GEU</a>
+        <li><b>:nth-child(n)</b> - 3rd child of every &ltp&gt tag group is in red colour background.</li>
+        <div>
+            <p> First  Child</p>
+            <p> Second Child</p>
+            <p> Third  Child</p>
+            <p> Fourth Child</p>
+            <p> Fifth  Child</p>
+        </div>
+        <li><b>:first-of-type</b> - .</li>
+        <div>
+            <p class="firstTypeDemo"> First  of type</p>
+            <p class="firstTypeDemo"> Second of type</p>
+            <p class="firstTypeDemo"> Third  of type</p>
+        </div>
+    </ul>
+    <br>
+    <h2>Special Selectors</h2>
+    <ul>
+        <li><b>Attribute Selector:</b></li>
+        <a href="http://www.wikipedia.org">Not Having Attribute Target</a><br>
+        <a href="http://www.wikipedia.org" target="_blank">Having Attribute Target</a><br>
+        <a href="http://www.wikipedia.org" target="_top">Having Attribute Target</a>
+        <li><b>Multiple Selector:</b></li>
+        <li class="multiple" id="one">This element is having id = one and class = multiple, (combining multiple selectors)</li>
+    </ul>
+    
+</body>
+</html>
